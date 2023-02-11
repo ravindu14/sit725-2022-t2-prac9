@@ -1,11 +1,11 @@
-from node:16.16.0
+FROM node:slim
 
 WORKDIR /app
 
-copy . .
+COPY . /app
 
-expose 3000
+RUN yarn install
 
-run yarn install
+EXPOSE 3000
 
-cmd ["yarn", "start"]
+CMD ["yarn", "start"]
